@@ -1,0 +1,4 @@
+name = "Fbank"
+uuid = "4d910b80-9630-11eb-2a8b-194ce69d32e8"
+authors = ["Taiyang Zhao <taiyang_zhao@163.com>"]
+version = "0.1.0"
