@@ -20,7 +20,7 @@ mutable struct fbankparams
         numFFT     = 256,
         alpha      = 0.97,
         fs         = 16000,
-        epsilon    = 1e-9)
+        epsilon    = 1e-6)
         maxfreq    = numFFT>>1
         new(winLength,winShift, numBanks,numFFT,alpha,fs, maxfreq,epsilon)
     end
@@ -104,23 +104,6 @@ function Base.show(io::IO, f::fbankparams)
     println(io, "    maxfreq = $(f.maxfreq)")
     println(io, "    epsilon = $(f.epsilon)")
     println(io, "--------------------")
-end
-
-
-function testfeat(N::Int)
-    p = fbankparams()
-    getfeat = initfbank(p)
-    wav = zeros(1,16000*N)
-
-    tic = time()
-    feat = getfeat(wav)
-    toc = time()
-    sec = (toc-tic)
-    rt = floor(N / sec)
-    println("=============================================================")
-    println("time to extrac features from 1 sec wav: ",sec," s")
-    println(" rts to extrac features from 1 sec wav: ", rt)
-    println("=============================================================")
 end
 
 
