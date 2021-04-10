@@ -58,8 +58,8 @@ end
 
 function splitwav(data, win, winLength::Int, winShift::Int)
     numFrame = div(length(data)-winLength, winShift) + 1
-    firstIds = (0:(numFrame-1)) .* winShift .+ 1     # 帧起始下标
-    lasstIds = firstIds .+ (winLength - 1)           # 帧结束下标
+    firstIds = (0:(numFrame-1)) .* winShift .+ 1  # 帧起始下标
+    lasstIds = firstIds .+ (winLength - 1)        # 帧结束下标
     frames   = zeros(winLength, numFrame)
     for i = 1:numFrame
         frames[:,i] = data[firstIds[i]:lasstIds[i]] .* win
