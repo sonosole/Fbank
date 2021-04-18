@@ -94,7 +94,7 @@ end
 
 
 function Base.show(io::IO, f::fbankparams)
-    println(io, "--------------------")
+    println(io, "———————————————————————")
     println(io, "  winLength = $(f.winLength)")
     println(io, "   winShift = $(f.winShift)")
     println(io, "   numBanks = $(f.numBanks)")
@@ -103,7 +103,7 @@ function Base.show(io::IO, f::fbankparams)
     println(io, "         fs = $(f.fs)")
     println(io, "    maxfreq = $(f.maxfreq)")
     println(io, "    epsilon = $(f.epsilon)")
-    println(io, "--------------------")
+    println(io, "———————————————————————")
 end
 
 
